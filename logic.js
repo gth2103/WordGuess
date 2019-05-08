@@ -1,4 +1,5 @@
 var gameWords = ["antelope", "salamander", "serval",  "caterpillar", "ocelot", "condor", "pheasant", "shoebill", "scorpion"]
+var audio = new Audio('./sound/lionSleeps.mp3');
 
 var randomWord  = function(array) {
     var index = getRandomInt(9);
@@ -99,6 +100,7 @@ var setupGame = function(array, integerW, integerL) {
 
 var startNewRound = function(game){
     if(hasWon(game.round.puzzleState)){
+        audio.play()
         alert("Congratulations, you won! The correct word was '" + game.round.word + "'. Play again!");
         game.wins++;
     }
@@ -224,12 +226,12 @@ var updatePage  =  function() {
     putWrongGuesses();
 }
 
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     putRandomImage();
     updatePage();
 
-    var start  =  true;
 
     document.addEventListener('keydown', (event) => {
              
