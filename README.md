@@ -5,7 +5,7 @@ A web-based Word Guess game (also known as hangman)
 ## Overview
 
 
-Build the game logic
+Building the game logic
 
 	The game was built by first implementing a set of utility functions to be used in each iteration.
 
@@ -40,7 +40,7 @@ Build the game logic
 
 
 
-Build webpage
+Building the webpage
 
 	A webpage was built containing elements to show the  relevent game information, including:
 
@@ -69,7 +69,7 @@ Build webpage
 
 
 
-Handle user input and update the page
+Handling user input and updating the page
 
 
 	The page was styled using html, css and bootstrap. The page was dynamically updated using javascript.
@@ -77,7 +77,9 @@ Handle user input and update the page
 
 	Javascript event listeners were used to detect user input via keydown events, and the page was updated based on the key pressed. 
 
-	At each keydown event the page is uploaded, and at the end of the round the user is alerted as to the status of the game and his or her performance. The page is updated with the image of the animal from the completed round, and the name of the animal is displayed below the banner. A sound is played when the user successfully guesses an animal. 
+	At each keydown event the page is uploaded, and at the end of the round the user is alerted as to the status of the game and his or her performance.
+	The page is updated with the image of the animal from the completed round, and the name of the animal is displayed below the banner. 
+	A sound is played when the user successfully guesses an animal. 
 
 
 ## Functionality Breakdown
