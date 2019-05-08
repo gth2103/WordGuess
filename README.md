@@ -73,7 +73,7 @@ Handle user input and update the page
 
 
 	The page was styled using html, css and bootstrap. The page was dynamically updated using javascript.
-	The theme of the page was 'animals' and the page was customized accordingly. 
+	The theme of the page is 'animals' and the page was customized accordingly. 
 
 	Javascript event listeners were used to detect user input via keydown events, and the page was updated based on the key pressed. 
 
