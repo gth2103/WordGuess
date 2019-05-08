@@ -1,4 +1,4 @@
-var gameWords = ["antelope", "salamander", "serval",  "caterpillars", "ocelot", "condor", "pheasant", "shoebill", "scorpion"]
+var gameWords = ["antelope", "salamander", "serval",  "caterpillar", "ocelot", "condor", "pheasant", "shoebill", "scorpion"]
 
 var randomWord  = function(array) {
     var index = getRandomInt(9);
@@ -106,12 +106,12 @@ var startNewRound = function(game){
         alert("Sorry, you lost! The correct word was '" + game.round.word + "'. Try again!");
         game.losses++;
     }
-    game.round  = setupRound(randomWord(array));
+    game.round  = setupRound(randomWord(game.words));
 }
 
 var myGame = setupGame(gameWords, 0, 0);
 
-var putImage = function() {
+var putRandomImage = function() {
     var elem = document.getElementById('animal-img');
     var img =  document.createElement('img');
     var src = document.createAttribute('src');
@@ -125,6 +125,25 @@ var putImage = function() {
     elem.appendChild(img);
 }
 
+var putCorrectImage = function() {
+    var elem = document.getElementById('animal-img');
+    var img =  document.createElement('img');
+    var src = document.createAttribute('src');
+    var string = "./images/animals/" + myGame.round.word + ".png"
+    src.value = string;
+    var id = document.createAttribute('id');
+    var string = "animal"
+    id.value = string;
+    img.setAttributeNode(id);
+    img.setAttributeNode(src);
+    elem.appendChild(img);
+}
+
+var pullImage = function() {
+    var child = document.getElementById("animal");
+    var parent = document.getElementById('animal-img');
+    parent.removeChild(child)
+}
 
 var putLosses = function() {
     var elem = document.getElementById('loss-counter');
@@ -176,13 +195,60 @@ var putWrongGuesses = function() {
     elem.innerHTML = wrongGuessesString;
 }
 
+var getLetter = function(e) {
+    if(e.keyCode >= 65  && e.keyCode <= 90) {
+        var letter = String.fromCharCode(e.keyCode).toLowerCase();
+        return letter; 
+    }
+}
+
+
+var getStart = function(e) {
+    if(e.keyCode === 32) {
+        return true; 
+    }
+    return false;
+}
+
+var putCorrectGuess = function() {
+    var elem = document.getElementById('correct-guess');
+    var correctGuessString = myGame.round.word;
+    elem.innerHTML = correctGuessString;
+}
+
+var updatePage  =  function() {
+    putPuzzleState();
+    putWins();
+    putLosses();
+    putGuessesLeft();
+    putWrongGuesses();
+}
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
-putImage();
-putPuzzleState();
-putWins();
-putLosses();
-putGuessesLeft();
-putWrongGuesses();
+    putRandomImage();
+    updatePage();
+
+    var start  =  true;
+
+    document.addEventListener('keydown', (event) => {
+             
+   
+            if(isEndOfRound(myGame.round)) {
+                start = false;
+                putCorrectGuess();
+                pullImage();
+                putCorrectImage();
+                startNewRound(myGame);
+                updatePage();
+            }
+            else {
+                var letter =  getLetter(event)
+                if(letter) {
+                    updateRound(myGame.round, letter);
+                    updatePage();
+                }
+            }
+    });
 
 });
