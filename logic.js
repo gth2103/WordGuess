@@ -28,21 +28,12 @@ var getBlanks = function(string) {
 }
 
 var fillBlanks = function(string, state, char) {
-    var indices = getIndices(string, char);
-    for(var i = 0; i < indices.length; i++){
-        state.splice(indices[i], 1, char);
-    }
-return state;
-}
-
-var getIndices = function(string, char) {
-    var indices = [];
     for(var i = 0; i < string.length; i++) {
         if(string[i] === char) {
-        indices.push(i);
+            state[i]  = string[i];
         }
     }
-    return indices;
+return state;
 }
 
 var setupRound = function(string) {
