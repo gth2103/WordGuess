@@ -68,5 +68,5 @@ Handle user input and update the page
 
 
 ## Functionality Breakdown
-[Screenshot of Game](images/screenshot1.png)
+[Screenshot of Game](images/screenshot1.gif)
 
