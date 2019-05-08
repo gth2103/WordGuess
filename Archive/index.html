@@ -13,6 +13,9 @@
              integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
              crossorigin="anonymous">
          </script>
+         
+         <link rel="stylesheet" href="./style.css">
+         <script type="text/javascript" src="./logic.js"></script>
     </head>
     <body>
         <div class="container">
@@ -21,14 +24,40 @@
                     <img src="./images/animals.png">
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                  
+            <div class="row m-2">
+                <div class="col text-center">
+                    <h1 id="correct-guess">* correct-guess *</h1> 
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                  
+            <div class="row m-5 text-center">
+                <div class="col-2">
+                </div>
+                <div id="animal-img" class="col-4 p-4 border border-info text-center">
+                </div>
+                <div class="col-4 p-4 border border-info text-center text-uppercase">
+                   <div class="row"> 
+                       <div id="intro" class="col text-center">
+                           Press any key to get started!
+                       </div> 
+                   </div> 
+                   <div class="row"> 
+                       <div id="win-counter" class="col p-4 d-inline text-center">
+                       </div> 
+                       <div id="loss-counter" class="col p-4 d-inline text-center">
+                       </div> 
+                   </div> 
+                   <div class="row"> 
+                       <div id="puzzle-state" class="col p-4 text-center">
+                       </div> 
+                   </div> 
+                   <div class="row"> 
+                       <div id="guesses-left" class="col p-4 text-center">
+                       </div> 
+                   </div> 
+                   <div class="row"> 
+                       <div id="wrong-guesses" class="col p-4 text-center">
+                       </div> 
+                   </div> 
                 </div>
             </div>
             <div class="row">

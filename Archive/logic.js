@@ -110,3 +110,79 @@ var startNewRound = function(game){
 }
 
 var myGame = setupGame(gameWords, 0, 0);
+
+var putImage = function() {
+    var elem = document.getElementById('animal-img');
+    var img =  document.createElement('img');
+    var src = document.createAttribute('src');
+    var string = "./images/animals/animal-" + getRandomInt(12) + ".png"
+    src.value = string;
+    var id = document.createAttribute('id');
+    var string = "animal"
+    id.value = string;
+    img.setAttributeNode(id);
+    img.setAttributeNode(src);
+    elem.appendChild(img);
+}
+
+
+var putLosses = function() {
+    var elem = document.getElementById('loss-counter');
+    var lossCounterString = 'Losses<br>' + myGame.losses;
+    elem.innerHTML = lossCounterString;
+}
+
+var putWins = function() {
+    var elem = document.getElementById('win-counter');
+    var winCounterString = 'Wins<br>' + myGame.wins;
+    elem.innerHTML = winCounterString;
+}
+
+var putGuessesLeft = function() {
+    var elem = document.getElementById('guesses-left');
+    var guessesLeftString = 'Number of guesses remaining<br>' + myGame.round.guessesLeft;
+    elem.innerHTML = guessesLeftString;
+}
+
+var getPuzzleState  = function(){
+
+    var puzzleStateString = ""
+
+    for(var i = 0; i < myGame.round.puzzleState.length; i++){
+        puzzleStateString = puzzleStateString + myGame.round.puzzleState[i] + " ";
+    }
+    return puzzleStateString;
+}
+
+var putPuzzleState = function() {
+    var elem = document.getElementById('puzzle-state');
+    var puzzleStateString = 'Current Word<br>' + getPuzzleState();
+    elem.innerHTML = puzzleStateString;
+}
+
+var getWrongGuesses  = function(){
+
+    var wrongGuessesString = ""
+
+    for(var i = 0; i < myGame.round.wrongGuesses.length; i++){
+        wrongGuessesString = wrongGuessesString + myGame.round.wrongGuesses[i] + " ";
+    }
+    return wrongGuessesString;
+}
+
+var putWrongGuesses = function() {
+    var elem = document.getElementById('wrong-guesses');
+    var wrongGuessesString = 'Letters already guessed<br>' + getWrongGuesses();
+    elem.innerHTML = wrongGuessesString;
+}
+
+window.addEventListener('DOMContentLoaded', (event) => {
+
+putImage();
+putPuzzleState();
+putWins();
+putLosses();
+putGuessesLeft();
+putWrongGuesses();
+
+});
