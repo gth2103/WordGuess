@@ -72,12 +72,12 @@ Build webpage
 Handle user input and update the page
 
 
-The page was styled using html, css and bootstrap. The page was dynamically updated using javascript.
-The theme of the page was 'animals' and the page was customized accordingly. 
+	The page was styled using html, css and bootstrap. The page was dynamically updated using javascript.
+	The theme of the page was 'animals' and the page was customized accordingly. 
 
-Javascript event listeners were used to detect user input via keydown events, and the page was updated based on the key pressed. 
+	Javascript event listeners were used to detect user input via keydown events, and the page was updated based on the key pressed. 
 
-At each keydown event the page is uploaded, and at the end of the round the user is alerted as to the status of the game and his or her performance. The page is updated with the image of the animal from the completed round, and the name of the animal is displayed below the banner. A sound is played when the user successfully guesses an animal. 
+	At each keydown event the page is uploaded, and at the end of the round the user is alerted as to the status of the game and his or her performance. The page is updated with the image of the animal from the completed round, and the name of the animal is displayed below the banner. A sound is played when the user successfully guesses an animal. 
 
 
 ## Functionality Breakdown
